@@ -23,6 +23,11 @@ app.get("/", (req, res) => {
 app.use(express.static(path.join(__dirname, "../public")));
 const uploadDir = path.join(__root, "public/uploads");
 app.use("/uploads", express.static(uploadDir));
+
+app.use(express.json());
+const buildPath = path.resolve(__dirname, "../../frontend/build");
+app.use(express.static(buildPath));
+
 app.use(
   cors({
     // origin: 'http://localhost:3000',
