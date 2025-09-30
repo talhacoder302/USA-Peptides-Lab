@@ -1,0 +1,15 @@
+{
+    "port": 5000,
+    "db_config": {
+        "driver": "mongodb+srv",
+        "host": "cluster0.1khtv50.mongodb.net",
+        "username": "talha_coder",
+        "password": "0maFDWH83IiHhjCn",
+        "dbName": "peptide_dev_db",
+        "options": {
+            "retryWrites": true,
+            "w": "majority",
+            "appName": "Cluster0"
+        }
+    }
+}

@@ -1,0 +1,571 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/sendSignupLink": {
+      "post": {
+        "summary": "Send Signup Link",
+        "tags": [
+          "Authentication"
+        ],
+        "description": "Generates a signup token and sends a registration link to the user's email. The link allows the user to complete their registration by setting a password.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "The email address of the user to register"
+                }
+              },
+              "required": [
+                "email"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Signup link sent to the provided email."
+          },
+          "400": {
+            "description": "Email already registered."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/completeSignup/{token}/{email}": {
+      "post": {
+        "summary": "Complete Signup",
+        "tags": [
+          "Authentication"
+        ],
+        "description": "Completes the user registration by verifying the signup token, setting the password, and creating the account.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The unique signup token sent to the user's email"
+          },
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "email",
+            "description": "The email address associated with the signup token"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "type": "string",
+                  "description": "The password the user wants to set"
+                }
+              },
+              "required": [
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Signup completed successfully."
+          },
+          "400": {
+            "description": "Invalid or expired token."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "User Login",
+        "tags": [
+          "Authentication"
+        ],
+        "description": "Authenticates the user by verifying the provided email and password, then generates access and refresh tokens.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "User's registered email address"
+                },
+                "password": {
+                  "type": "string",
+                  "description": "User's password"
+                }
+              },
+              "required": [
+                "email",
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Logged in successfully, tokens generated."
+          },
+          "400": {
+            "description": "Invalid email or incorrect password."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "summary": "Logout User",
+        "tags": [
+          "Authentication"
+        ],
+        "description": "Logs out the currently authenticated user by removing the refresh token and clearing cookies.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully logged out."
+          },
+          "400": {
+            "description": "No user is logged in."
+          },
+          "500": {
+            "description": "An error occurred during logout."
+          }
+        }
+      }
+    },
+    "/accountDetails": {
+      "put": {
+        "summary": "Update Account Details",
+        "tags": [
+          "User Account"
+        ],
+        "description": "Updates the user's account details such as first name, last name, display name, and optionally changes the password if provided.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "description": "User's first name"
+                },
+                "lastName": {
+                  "type": "string",
+                  "description": "User's last name"
+                },
+                "displayName": {
+                  "type": "string",
+                  "description": "User's display name (must be unique)"
+                },
+                "currentPassword": {
+                  "type": "string",
+                  "description": "Current password (required if changing password)"
+                },
+                "newPassword": {
+                  "type": "string",
+                  "description": "New password (required if changing password)"
+                },
+                "confirmNewPassword": {
+                  "type": "string",
+                  "description": "Confirm new password (required if changing password)"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "displayName"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Account details updated successfully."
+          },
+          "400": {
+            "description": "Validation error, such as missing fields or incorrect password."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/addProduct": {
+      "post": {
+        "summary": "Create Product",
+        "tags": [
+          "Products"
+        ],
+        "description": "Creates a new product with details, discounts, stock, and tabbed content including optional file uploads.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "Product name"
+          },
+          {
+            "name": "price",
+            "in": "formData",
+            "required": true,
+            "type": "number",
+            "description": "Product price"
+          },
+          {
+            "name": "size",
+            "in": "formData",
+            "type": "string",
+            "description": "Product size"
+          },
+          {
+            "name": "contents",
+            "in": "formData",
+            "type": "string",
+            "description": "Product contents"
+          },
+          {
+            "name": "form",
+            "in": "formData",
+            "type": "string",
+            "description": "Product form (e.g., powder, liquid)"
+          },
+          {
+            "name": "purity",
+            "in": "formData",
+            "type": "string",
+            "description": "Product purity percentage"
+          },
+          {
+            "name": "sku",
+            "in": "formData",
+            "type": "string",
+            "description": "Stock Keeping Unit"
+          },
+          {
+            "name": "stock",
+            "in": "formData",
+            "type": "number",
+            "description": "Available stock quantity"
+          },
+          {
+            "name": "freeShippingOn",
+            "in": "formData",
+            "type": "number",
+            "description": "Free shipping threshold amount"
+          },
+          {
+            "name": "discounts",
+            "in": "formData",
+            "type": "string",
+            "description": "JSON array of discounts [{ minQuantity, maxQuantity, discountPercent }]"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "type": "string",
+            "description": "Product description (added to tabs)"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "description": "Main product image"
+          },
+          {
+            "name": "certificate",
+            "in": "formData",
+            "type": "file",
+            "description": "Certificate file for product tabs"
+          },
+          {
+            "name": "hplc",
+            "in": "formData",
+            "type": "file",
+            "description": "HPLC file for product tabs"
+          },
+          {
+            "name": "massSpectrometry",
+            "in": "formData",
+            "type": "file",
+            "description": "Mass Spectrometry file for product tabs"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product created successfully."
+          },
+          "400": {
+            "description": "Validation error, such as missing product name, price, or image, or invalid discounts format."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/productList": {
+      "get": {
+        "summary": "Get All Products",
+        "tags": [
+          "Products"
+        ],
+        "description": "Fetches all non-deleted products with their name, image, and price.",
+        "responses": {
+          "200": {
+            "description": "Products fetched successfully",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Product name"
+                  },
+                  "productImage": {
+                    "type": "string",
+                    "description": "Product image URL"
+                  },
+                  "price": {
+                    "type": "number",
+                    "description": "Product price"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/getProductById/{id}": {
+      "get": {
+        "summary": "Get Product by ID",
+        "tags": [
+          "Products"
+        ],
+        "description": "Fetches a single product by its ID if it exists and is not deleted.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The unique identifier of the product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product fetched successfully."
+          },
+          "400": {
+            "description": "Product not found."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/updateProduct/{id}": {
+      "put": {
+        "summary": "Update Product",
+        "tags": [
+          "Products"
+        ],
+        "description": "Updates an existing product by ID. Allows updating product details, discounts, image, and product tabs with optional file uploads.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Product ID to update"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "type": "string",
+            "description": "Product name"
+          },
+          {
+            "name": "price",
+            "in": "formData",
+            "type": "number",
+            "description": "Product price"
+          },
+          {
+            "name": "size",
+            "in": "formData",
+            "type": "string",
+            "description": "Product size"
+          },
+          {
+            "name": "contents",
+            "in": "formData",
+            "type": "string",
+            "description": "Product contents"
+          },
+          {
+            "name": "form",
+            "in": "formData",
+            "type": "string",
+            "description": "Product form (e.g., powder, liquid)"
+          },
+          {
+            "name": "purity",
+            "in": "formData",
+            "type": "string",
+            "description": "Product purity percentage"
+          },
+          {
+            "name": "sku",
+            "in": "formData",
+            "type": "string",
+            "description": "Stock Keeping Unit"
+          },
+          {
+            "name": "stock",
+            "in": "formData",
+            "type": "number",
+            "description": "Available stock quantity"
+          },
+          {
+            "name": "freeShippingOn",
+            "in": "formData",
+            "type": "number",
+            "description": "Free shipping threshold amount"
+          },
+          {
+            "name": "discounts",
+            "in": "formData",
+            "type": "string",
+            "description": "JSON array of discounts [{ minQuantity, maxQuantity, discountPercent }]"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "type": "string",
+            "description": "Product description (adds to tabs)"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "type": "file",
+            "description": "New main product image"
+          },
+          {
+            "name": "certificate",
+            "in": "formData",
+            "type": "file",
+            "description": "Certificate file for product tabs"
+          },
+          {
+            "name": "hplc",
+            "in": "formData",
+            "type": "file",
+            "description": "HPLC file for product tabs"
+          },
+          {
+            "name": "massSpectrometry",
+            "in": "formData",
+            "type": "file",
+            "description": "Mass Spectrometry file for product tabs"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product updated successfully."
+          },
+          "400": {
+            "description": "Validation error, such as product not found or invalid discounts format."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/deleteProduct/{id}": {
+      "delete": {
+        "summary": "Delete Product",
+        "tags": [
+          "Products"
+        ],
+        "description": "Marks a product as deleted by setting the isDeleted flag to true.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ID of the product to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product deleted successfully."
+          },
+          "400": {
+            "description": "Product not found."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    }
+}
+}
