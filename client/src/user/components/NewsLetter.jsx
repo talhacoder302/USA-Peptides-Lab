@@ -15,34 +15,35 @@ const NewsLetter = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-[130vh] text-white md:px-4 px-2">
-        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-12 md:px-10 sm:px-6 px-4  flex flex-col gap-6 items-center justify-center rounded-lg">
+        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-12 md:px-10 sm:px-6 px-4 flex flex-col gap-6 items-center justify-center rounded-lg">
           <div className="text-center space-y-2">
-            <h2 className="md:text-[26px] text-[16px] font-[600]">
+            <h2 className="xl:text-[26px] lg:text-[26px] md:text-[26px] text-[22px] font-[600]">
               SUBSCRIBE TO OUR NEWSLETTER
             </h2>
             <p className="font-medium text-secondary">
               ENJOY PROMOTIONS AND DISCOUNTS
             </p>
           </div>
-          <form className="w-full flex flex-col md:gap-3 sm:gap-1 gap-0 space-y-4">
+          <form className="w-full flex flex-col md:gap-3 sm:gap-1 gap-0 space-y-2">
             <input
               type="text"
               placeholder="First Name"
-              className="w-full md:px-4 px-3 py-4 rounded-full  bg-transparent border border-secondary text-secondary focus:outline-none"
+              className="w-full md:px-4 px-3 py-4 rounded-full font-semibold bg-transparent border-2 border-secondary text-secondary placeholder-secondary focus:outline-none"
             />
             <input
               type="email"
-              placeholder="Email"
-              className="w-full px-4 py-4 rounded-full bg-transparent border border-secondary text-secondary focus:outline-none"
+              placeholder="Email Address"
+              className="w-full px-4 py-4 rounded-full bg-transparent font-semibold border-2 border-secondary placeholder-secondary text-secondary focus:outline-none"
             />
-            <div className="flex items-center w-full px-2 py-4 rounded-full border border-secondary  bg-transparent text-secondary focus-within:ring-2 focus:outline-none">
+            <div className="flex items-center w-full px-2 py-4 rounded-full font-semibold border-2 border-secondary bg-transparent text-secondary focus-within:ring-2 focus:outline-none">
               <PhoneInput
                 placeholder="Enter phone number"
                 international
                 defaultCountry="US"
+                countryCallingCodeEditable={false}
                 value={phone}
                 onChange={setPhone}
-                className="flex-1 [&>input]:bg-transparent [&>input]:text-secondary [&>input]:placeholder:text-secondary [&>input]:outline-none [&>input]:ring-0 focus:[&>input]:outline-none focus:[&>input]:ring-0"
+                className="ml-3 flex-1 [&>input]:bg-transparent [&>input]:text-secondary [&>input]:placeholder:text-secondary [&>input]:outline-none [&>input]:ring-0 focus:[&>input]:outline-none focus:[&>input]:ring-0"
               />
             </div>
 
@@ -52,11 +53,11 @@ const NewsLetter = () => {
             >
               SUBSCRIBE
             </button>
-            <label className="flex items-center font-[700] text-[16px] gap-2">
-              <input type="checkbox" className="accent-blue-400" />
-              Text me with offers and updates
+            <label className="flex items-center font-semibold text-[16px] gap-2 text-secondary">
+              <input type="checkbox" className="w-3 h-3 accent-blue-400" />
+                Text me with offers and updates
             </label>
-            <div className=" text-secondary flex items-center justify-between gap-2">
+            <div className="text-secondary font-semibold flex items-center justify-between gap-2">
               <p className="text-xs">
                 We promise not to spam you. Read our privacy policy for more
                 information.

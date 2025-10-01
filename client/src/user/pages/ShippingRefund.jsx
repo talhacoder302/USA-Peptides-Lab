@@ -8,14 +8,14 @@ const ShippingRefund = () => {
         className="flex items-center justify-center w-full min-h-[40vh] bg-cover bg-center "
         style={{ backgroundImage: `url(${Background})` }}
       >
-        <div className=" md:mt-8 mt-4 w-[90%] text-gradient md:text-[60px] text-[32px] leading-tight font-[700]">
-          <h1 className=" lg:w-[40%]  w-[100%]">Shipping, Returns & Refunds</h1>
+        <div className="md:mt-8 mt-4 w-[90%] text-gradient md:text-[60px] text-[32px] leading-tight font-[700]">
+          <h1 className="md:ml-16 lg:w-[40%] w-[100%]">Shipping, Returns & Refunds</h1>
         </div>
       </div>
-      <div className="flex  items-center justify-center w-[100%] text-[15px] leading-[26px] font-[500]">
+      <div className="flex items-center justify-center w-[100%] text-[15px] leading-[26px] font-[500]">
         <div className="flex flex-col gap-6 items-start md:w-[80%] w-[90%] text-[#666]">
           <div className="flex flex-col gap-5 ">
-            <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
+            <h1 className="md:mt-12 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
               Shipping
             </h1>
             <p>

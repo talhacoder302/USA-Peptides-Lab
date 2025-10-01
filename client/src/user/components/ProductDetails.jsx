@@ -229,7 +229,7 @@ const ProductDetails = () => {
             </div>
 
             <div className="mt-12">
-              <div className="flex md:flex-row flex-col border-b border-gray-300">
+              <div className="flex md:flex-row flex-col">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
@@ -246,7 +246,7 @@ const ProductDetails = () => {
               </div>
 
               {/* Tab Content */}
-              <div className="py-6">
+              <div className="py-6 px-6 border border-gray-300">
                 {activeTab === "description" && (
                   <div
                     className="prose prose-sm max-w-full overflow-hidden break-words [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:text-gray-800 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mb-3 [&_h3]:text-gray-700 [&_p]:mb-4 [&_p]:text-gray-600 [&_p]:leading-relaxed [&_ul]:mb-4 [&_ul]:ml-6 [&_li]:mb-2 [&_li]:text-gray-600 [&_ol]:mb-4 [&_ol]:ml-6 [&_a]:text-blue-600 [&_a]:underline [&_strong]:font-bold [&_em]:italic"

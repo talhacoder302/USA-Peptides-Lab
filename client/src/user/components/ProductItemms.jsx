@@ -115,7 +115,7 @@ const ProductItems = () => {
   return (
     <div className="flex items-center justify-center my-16">
       <div className="flex flex-col items-center w-[100%]">
-        <div className="md:text-[26px] text-[20px] font-[700] leading-[32px]">
+        <div className="md:text-[26px] lg:text-[32px] xl:text-[32px] text-[26px] font-[700] leading-[32px] text-gray-800">
           Research Peptides For Sale
         </div>
         <div className="flex md:flex-row flex-col items-start justify-between gap-4 md:w-[80%] w-[90%] p-2 my-8">
@@ -123,7 +123,7 @@ const ProductItems = () => {
             Showing all {products.length} results
           </p>
           <select
-            className="border border-black px-2 py-1 md:text-md text-sm rounded-sm"
+            className="border border-black px-2 py-1 md:text-md text-sm rounded-sm font-[400]"
             value={sortOption}
             onChange={handleSortChange}
           >

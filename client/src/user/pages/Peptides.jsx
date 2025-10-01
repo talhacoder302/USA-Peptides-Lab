@@ -15,8 +15,8 @@ const Peptides = () => {
               Research Peptides For Sale
             </h1>
           </div>
-          <div className="lg:w-1/2">
-            <img src={heropd} alt="product" />
+          <div className="lg:w-1/2 flex items-center justify-center">
+            <img src={heropd} alt="product" className="lg:mt-14"/>
           </div>
         </div>
       </div>
