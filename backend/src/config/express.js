@@ -25,7 +25,7 @@ const uploadDir = path.join(__root, "public/uploads");
 app.use("/uploads", express.static(uploadDir));
 
 app.use(express.json());
-const buildPath = path.resolve(__dirname, "../../client/build");
+const buildPath = path.resolve(__dirname, "../../../../../client/build");
 app.use(express.static(buildPath));
 
 app.use(
