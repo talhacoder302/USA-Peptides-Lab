@@ -15,9 +15,9 @@ const swaggerDocument = require("../../swagger.json");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../views"));
 
-app.get("/", (req, res) => {
-  res.send("Backend is Running");
-});
+// app.get("/", (req, res) => {
+//   res.send("Backend is Running");
+// });
 
 // Serve static files like CSS, images, etc.
 app.use(express.static(path.join(__dirname, "../public")));
@@ -32,9 +32,9 @@ app.use(express.static(buildPath));
 
 app.use(
   cors({
-    // origin: 'http://localhost:3000',
-    origin: ["http://localhost:3000", "https://usa-peptides.vercel.app", "http://usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com"],
-    // origin: true,
+    origin: 'http://localhost:3000',
+    // origin: ["http://localhost:3000", "https://usa-peptides.vercel.app", "http://usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com"],
+    // origin: '*',
     credentials: true,
   })
 );
