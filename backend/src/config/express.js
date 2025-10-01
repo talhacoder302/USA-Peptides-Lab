@@ -32,8 +32,8 @@ app.use(express.static(buildPath));
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
-    // origin: ["http://localhost:3000", "https://usa-peptides.vercel.app", "http://usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com"],
+    // origin: 'http://localhost:3000',
+    origin: ["http://localhost:3000", "http://51.20.51.233:5000", "http://usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com"],
     // origin: '*',
     credentials: true,
   })

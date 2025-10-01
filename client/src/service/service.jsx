@@ -1,7 +1,8 @@
 // services/apiService.js
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/v1";
+// const BASE_URL = "http://localhost:5000/api/v1";
+const BASE_URL = "http://51.20.51.233:5000/api/v1";
 // const BASE_URL =
 //   "http://usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com/api/v1";
 
