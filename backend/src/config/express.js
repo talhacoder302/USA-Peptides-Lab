@@ -23,7 +23,6 @@ app.set("views", path.join(__dirname, "../views"));
 app.use(express.static(path.join(__dirname, "../public")));
 const uploadDir = path.join(__root, "public/uploads");
 app.use("/uploads", express.static(uploadDir));
-
 app.use(express.json());
 const _dirname = path.dirname("");
 const buildPath = path.resolve(_dirname, "../client/build");
@@ -33,8 +32,7 @@ app.use(express.static(buildPath));
 app.use(
   cors({
     // origin: 'http://localhost:3000',
-    origin: ["http://localhost:3000", "http://51.20.51.233:5000", "http://usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com"],
-    // origin: '*',
+    origin: ["http://localhost:3000", "http://51.20.51.233:5000"],
     credentials: true,
   })
 );
