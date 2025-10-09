@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <div className="flex flex-col items-end gap-14 mb-16">
       <div
-        className="flex items-center justify-center w-full min-h-[50vh] bg-cover bg-center "
+        className="flex items-center justify-center w-full min-h-[50vh] bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})` }}
       >
         <h1 className="md:mt-12 mt-24 sm:w-[80%] w-[88%] text-gradient md:text-[60px] text-[32px] font-[700] md:leading-[70px]">
@@ -25,7 +25,7 @@ const AboutUs = () => {
         <h1>Why Choose Us?</h1>
       </div>
       <div className="w-[90%] flex flex-col gap-6 text-[#666] ">
-        <div className=" w-[88%] font-[500] text-[15px] leading-[26px]">
+        <div className="w-[88%] font-[500] text-[15px] leading-[26px]">
           <span className=" font-[700]">Top Quality:</span> Our peptides are
           manufactured locally against the highest standards for synthesis,
           undergoing rigorous quality control measures to ensure their purity,

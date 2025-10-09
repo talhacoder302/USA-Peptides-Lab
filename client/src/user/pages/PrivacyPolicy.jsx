@@ -32,7 +32,7 @@ const PrivacyPolicy = () => {
               Generator.
             </p>
           </div>
-          <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
+          <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
             Interpretation and Definitions
           </h1>
           <div className="flex flex-col gap-5">
@@ -129,7 +129,7 @@ const PrivacyPolicy = () => {
               </li>
             </ul>
           </div>
-          <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
+          <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
             Collecting and Using Your Personal Data
           </h1>
           <div className="flex flex-col gap-4">
@@ -431,7 +431,7 @@ const PrivacyPolicy = () => {
             commercially acceptable means to protect Your Personal Data, We
             cannot guarantee its absolute security.
           </p>
-          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
+          <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700]  text-[#333]">
             Detailed Information on the Processing of Your Personal Data
           </h1>
           <p>
@@ -468,7 +468,7 @@ const PrivacyPolicy = () => {
             We may use third-party Service Providers to provide better
             improvement of our Service.
           </p>
-          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
+          <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700]  text-[#333]">
             Links to Other Websites
           </h1>
           <p>
@@ -482,7 +482,7 @@ const PrivacyPolicy = () => {
             content, privacy policies or practices of any third party sites or
             services.
           </p>
-          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
+          <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700]  text-[#333]">
             Changes to this Privacy Policy
           </h1>
           <p>
@@ -499,7 +499,7 @@ const PrivacyPolicy = () => {
             changes. Changes to this Privacy Policy are effective when they are
             posted on this page.
           </p>
-          <h1 className="md:text-[28px] text-[22px] font-[700]  text-[#333]">
+          <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700]  text-[#333]">
             Contact Us
           </h1>
           <p>

@@ -15,7 +15,7 @@ const ShippingRefund = () => {
       <div className="flex items-center justify-center w-[100%] text-[15px] leading-[26px] font-[500]">
         <div className="flex flex-col gap-6 items-start md:w-[80%] w-[90%] text-[#666]">
           <div className="flex flex-col gap-5 ">
-            <h1 className="md:mt-12 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
+            <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
               Shipping
             </h1>
             <p>
@@ -44,7 +44,7 @@ const ShippingRefund = () => {
               Shipping rates and options, including free shipping, are subject
               to change at any time without notice.
             </p>
-            <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
+            <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
               Returns and Refunds
             </h1>
             <p>
@@ -59,14 +59,14 @@ const ShippingRefund = () => {
             <p>
               Refunds may be requested up to 30 days after an order is placed.
             </p>
-            <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
+            <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
               Refund Timeframe
             </h1>
             <p>
               Refunds should settle and post to your account in 2 to 3 business
               days.
             </p>
-            <h1 className="md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
+            <h1 className="md:mt-6 mb-6 md:text-[28px] text-[22px] font-[700] leading-[28px] text-[#333]">
               Bulk and Special Orders
             </h1>
             <p>
