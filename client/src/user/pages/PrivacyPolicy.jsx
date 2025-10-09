@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="flex flex-col items-end gap-14 mb-20">
       <div
-        className="flex items-center justify-center w-full min-h-[40vh] bg-cover bg-center"
+        className="flex items-center justify-center w-full min-h-[50vh] bg-cover bg-center"
         style={{ backgroundImage: `url(${Background})`}}
       >
         <h1 className="md:ml-28 md:mt-8 mt-4 w-[90%] text-gradient md:text-[60px] text-[32px] leading-tight font-[700]">

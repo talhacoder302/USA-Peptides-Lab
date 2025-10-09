@@ -34,37 +34,37 @@ const Footer = () => {
             </div>
             <nav className="flex flex-col font-medium gap-3 text-sm mt-8">
               <NavLink
-                to="/user/peptides"
+                to="/peptides"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Peptides for Sale
               </NavLink>
               <NavLink
-                to="/user/about-us"
+                to="/about-us"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 About Us
               </NavLink>
               <NavLink
-                to="/user/shipping"
+                to="/shipping"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Shipping, Returns & Refunds
               </NavLink>
               <NavLink
-                to="/user/privacy-policy"
+                to="/privacy-policy"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Privacy Policy
               </NavLink>
               <NavLink
-                to="/user/terms-condition"
+                to="/terms-condition"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Terms and Conditions
               </NavLink>
               <NavLink
-                to="/user/contact"
+                to="/contact"
                 className="hover:text-primary transition-all duration-500 ease-in-out"
               >
                 Contact

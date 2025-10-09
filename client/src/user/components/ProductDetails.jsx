@@ -19,7 +19,7 @@ const ProductDetails = () => {
   }, [location.state, productName]);
 
   const handleBackToProducts = () => {
-    navigate("/user/peptides");
+    navigate("/peptides");
   };
 
   const handleQuantityChange = (action) => {

@@ -91,7 +91,7 @@ const ProductItems = () => {
         .replace(/-+/g, "-")
         .replace(/^-|-$/g, "") || "product";
 
-    navigate(`/user/peptides/${productName}`, {
+    navigate(`/peptides/${productName}`, {
       state: { product },
     });
   };

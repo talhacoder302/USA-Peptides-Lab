@@ -13,9 +13,17 @@ import ShippingRefund from "../user/pages/ShippingRefund";
 import SearchResult from "../user/components/SearchResult";
 import SetUpPassword from "../user/components/SetUpPassword";
 import ProductDetails from "../user/components/ProductDetails";
+import UserDashboard from "../user/pages/UserDashboard";
+import Dashboard from "../user/components/UserDashboardComp/Dashboard";
+import AccountDetails from "../user/components/UserDashboardComp/AccountDetails";
+import Address from "../user/components/UserDashboardComp/Address/Address";
+import Billing from "../user/components/UserDashboardComp/Address/Billing";
+import Shipping from "../user/components/UserDashboardComp/Address/Shipping";
+import Download from "../user/components/UserDashboardComp/Download";
+import Order from "../user/components/UserDashboardComp/Order";
 
 const userRoutes = [
-  <Route key="home" path="" element={<Home />} />,
+  <Route key="home" path="home" element={<Home />} />,
   <Route key="about-us" path="about-us" element={<AboutUs />} />,
   <Route key="contact" path="contact" element={<Contact />} />,
   // Define peptides routes separately
@@ -33,9 +41,24 @@ const userRoutes = [
   />,
   <Route
     key="setup-password"
-    path="my-accounts/setup-password/:token/:email"
+    path="my-accounts/setup-password"
     element={<SetUpPassword />}
   />,
+  // <Route key="my-accounts/dashboard" path="my-accounts/dashboard" element={<UserDashboard />} />,
+  <Route
+    key="my-accounts/dashboard"
+    path="my-accounts/dashboard"
+    element={<UserDashboard />}
+  >
+    <Route index element={<Dashboard />} />
+    {/* <Route path="store-credit" element={<Credit />} />*/}
+    <Route path="orders" element={<Order />} /> 
+    <Route path="downloads" element={<Download />} />
+    <Route path="addresses" element={<Address />} />
+<Route path="addresses/billing" element={<Billing />} />
+<Route path="addresses/shipping" element={<Shipping />} />
+    <Route path="account-details" element={<AccountDetails />} />
+  </Route>,
   <Route key="privacy" path="privacy-policy" element={<PrivacyPolicy />} />,
   <Route key="terms" path="terms-condition" element={<TermsCondition />} />,
   <Route key="shipping" path="shipping" element={<ShippingRefund />} />,

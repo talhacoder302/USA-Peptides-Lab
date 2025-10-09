@@ -2,7 +2,7 @@ import React from "react";
 
 const PeptidesHome = () => {
   return (
-    <div className="flex items-center justify-center  sm:h-[100vh]  my-10 lg-peptides-bg">
+    <div className="flex items-center justify-center sm:h-[100vh] my-10 lg-peptides-bg">
       <div className="w-[90%] flex items-center lg:flex-row flex-col lg:gap-0 gap-10">
         <div className="lg:w-2/3 md:w-[90%] w-[100%]  flex flex-col lg:justify-center justify-start lg:gap-72 md:gap-8 gap-4 lg:h-[90vh] ">
           {/* <div className="relative bg-white py-6">
@@ -30,7 +30,7 @@ const PeptidesHome = () => {
         </div>
         <div className="md:w-1/2 p-4 flex flex-col justify-end items-center">
           <a
-            href="/user/peptides"
+            href="/peptides"
             className="lg:text-2xl sm:text-[25px] text-[20px] font-medium bg-gradient lg:py-5 py-3 lg:px-10 sm:px-8 px-6  lg:mt-60 rounded-full btn-gradient "
           >
             SHOP NOW

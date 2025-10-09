@@ -38,8 +38,8 @@ function App() {
       <ScrollToTop />
       <LayoutWrapper>
         <Routes>
-          <Route path="/" element={<Navigate to="/user" replace />} />
-          <Route path="/user/*" element={<UserWrapper />} />
+          <Route path="/" element={<Navigate to="/" replace />} />
+          <Route path="/*" element={<UserWrapper />} />
           <Route path="/admin/*" element={<AdminWrapper />} />
         </Routes>
       </LayoutWrapper>

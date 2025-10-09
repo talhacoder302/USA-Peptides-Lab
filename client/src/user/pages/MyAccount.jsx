@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { login, sendSignupLink } from "../../service/service";
+import { successToast, errorToast } from "../../utils/AlertsConfig";
 
 const MyAccount = () => {
   const navigate = useNavigate();
@@ -12,44 +13,41 @@ const MyAccount = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
+    const [rememberMe, setRememberMe] = useState(false);
 
-  // Custom toast settings
-  const toastConfig = {
-    position: "top-right",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    style: {
-      backgroundColor: "#fff",
-      color: "#093161",
-      borderRadius: "12px",
-      fontSize: "14px",
-      fontWeight: "500",
-      padding: "12px 16px",
-    },
-    progressStyle: {
-      background: "#fff",
-    },
-  };
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberEmail");
+    const savedPassword = localStorage.getItem("rememberPassword");
 
-  // LOGIN
+    if (savedEmail && savedPassword) {
+      setLoginEmail(savedEmail);
+      setLoginPassword(savedPassword);
+      setRememberMe(true);
+    }
+  }, []);
+
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const res = await login(loginEmail, loginPassword);
 
-      toast.success(res.data?.message || "Login successful!", toastConfig);
+      successToast(res.data?.message || "Login successful!");
 
-      // Check the role and navigate
+      if (rememberMe) {
+        localStorage.setItem("rememberEmail", loginEmail);
+        localStorage.setItem("rememberPassword", loginPassword);
+      } else {
+        localStorage.removeItem("rememberEmail");
+        localStorage.removeItem("rememberPassword");
+      }
       if (res.data.data.role === "Admin") {
         navigate("/admin/dashboard");
       } else {
-        navigate("/user");
+        navigate("/");
       }
     } catch (err) {
-      toast.error(err.response?.data?.message || "Login failed", toastConfig);
+      errorToast(err.response?.data?.message || "Login failed");
     }
   };
 
@@ -59,13 +57,11 @@ const MyAccount = () => {
     try {
       const res = await sendSignupLink(registerEmail);
 
-      toast.success(res.data?.message || "Signup link sent!", toastConfig);
+      successToast(res.data?.message || "Signup link sent!");
       setRegisterEmail("");
     } catch (err) {
-      toast.error(
-        err.response?.data?.message || "Registration failed",
-        toastConfig
-      );
+            errorToast(err.response?.data?.message || "Registration failed");
+
     }
   };
 
@@ -125,7 +121,11 @@ const MyAccount = () => {
                   LOG IN
                 </button>
                 <div className="flex items-center gap-2">
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={() => setRememberMe(!rememberMe)}
+                  />
                   <label className="text-xs">Remember me</label>
                 </div>
               </div>
@@ -168,7 +168,7 @@ const MyAccount = () => {
                 throughout this website, to manage access to your account, and
                 for other purposes described in our{" "}
                 <a
-                  href="/user/privacy-policy"
+                  href="/privacy-policy"
                   className="text-[#CC3882] font-medium"
                 >
                   privacy policy

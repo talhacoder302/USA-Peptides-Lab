@@ -2,12 +2,12 @@ import React from "react";
 import Background from "../../assets/updated-left.png";
 const AboutUs = () => {
   return (
-    <div className="flex flex-col items-end gap-14 mb-20">
+    <div className="flex flex-col items-end gap-14 mb-10">
       <div
-        className="flex items-center justify-center w-full min-h-[35vh] bg-cover bg-center "
+        className="flex items-center justify-center w-full min-h-[50vh] bg-cover bg-center "
         style={{ backgroundImage: `url(${Background})` }}
       >
-        <h1 className=" md:mt-12 mt-24 sm:w-[80%] w-[90%] text-gradient md:text-[60px] text-[32px] font-[700]  md:leading-[70px]">
+        <h1 className="md:mt-12 mt-24 sm:w-[80%] w-[90%] text-gradient md:text-[60px] text-[32px] font-[700] md:leading-[70px]">
           ABOUT USA <br className="md:!flex hidden" /> PEPTIDES LAB
         </h1>
       </div>
@@ -56,7 +56,7 @@ const AboutUs = () => {
             href="/contact"
             className="font-[600] leading-[26px] text-[#cc3882]"
           >
-            Contact page
+          ‎ Contact page
           </a>
           .
         </div>
