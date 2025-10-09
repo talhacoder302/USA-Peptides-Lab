@@ -97,14 +97,14 @@ const Header = () => {
     <>
       <div className="bg-black text-white sticky top-0 z-[999999]">
         <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between md:py-3 py-3">
-          <NavLink to="/home">
+          <NavLink to="/">
             <img src={Logo} alt="Logo" className="md:w-32 w-24" />
           </NavLink>
 
           <div className="flex items-center gap-10">
             <nav className="hidden lg:!flex items-center font-medium gap-6 ">
               <NavLink
-                to="/home"
+                to="/"
                 end
                 className={({ isActive }) =>
                   isActive

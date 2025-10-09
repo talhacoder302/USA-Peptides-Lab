@@ -23,7 +23,7 @@ import Download from "../user/components/UserDashboardComp/Download";
 import Order from "../user/components/UserDashboardComp/Order";
 
 const userRoutes = [
-  <Route key="home" path="home" element={<Home />} />,
+  <Route key="home" path="" element={<Home />} />,
   <Route key="about-us" path="about-us" element={<AboutUs />} />,
   <Route key="contact" path="contact" element={<Contact />} />,
   // Define peptides routes separately
