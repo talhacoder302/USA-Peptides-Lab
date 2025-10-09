@@ -13,13 +13,18 @@ import UserRoutes from "./routes/UserRoute";
 import AdminRoutes from "./routes/AdminRoute";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }, [pathname]);
   return null;
 }
+
 function LayoutWrapper({ children }) {
   const { pathname } = useLocation();
   const isAdmin = pathname.startsWith("/admin");
@@ -32,15 +37,15 @@ function LayoutWrapper({ children }) {
     </>
   );
 }
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <LayoutWrapper>
         <Routes>
-          <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/*" element={<UserWrapper />} />
           <Route path="/admin/*" element={<AdminWrapper />} />
+          <Route path="/*" element={<UserWrapper />} />
         </Routes>
       </LayoutWrapper>
       <ToastContainer />
