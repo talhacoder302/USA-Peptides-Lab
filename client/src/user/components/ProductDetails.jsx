@@ -66,7 +66,7 @@ const ProductDetails = () => {
   ].filter(Boolean);
 
   return (
-    <div className="flex flex-col items-center my-16 text-[#666]">
+    <div className="flex flex-col items-center my-16 text-[#666] bg-[#fafafa]">
       <div className="md:w-[80%] w-[90%]">
         {!product ? (
           <p className="text-center ">Loading product...</p>

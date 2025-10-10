@@ -1,11 +1,11 @@
 import React from "react";
-const herobg = require("../../assets/herobg.jpeg");
-const heropd = require("../../assets/heroBg.png");
+const herobg = require("../../assets/hero-bg.png");
+const heropd = require("../../assets/hero-bg-vials.png");
 
 const HeroSection = () => {
   return (
     <div
-      className="w-full flex items-start justify-center py-10 lg:min-h-[75vh] bg-cover bg-center "
+      className="w-full flex items-start justify-center lg:min-h-[78vh] bg-cover bg-center "
       style={{ backgroundImage: `url(${herobg})` }}
     >
       <div className="md:w-[80%] w-[90%] flex lg:flex-row lg:mt-5 flex-col xl:gap-8 lg:gap-0 gap-4">
@@ -19,13 +19,13 @@ const HeroSection = () => {
           </p>
           <a
             href="/peptides"
-            className="text-secondary bg-transparent border border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl"
+            className="text-secondary bg-transparent border-2 font-semibold border-secondary hover:text-white hover:bg-secondary py-1.5 px-5 sm:text-[20px] text-[18px] rounded-2xl"
           >
             BUY PEPTIDES
           </a>
         </div>
         <div className="lg:w-[50%] flex items-center justify-center">
-          <img src={heropd} alt="product" className="lg:mt-10" />
+          <img src={heropd} alt="product" className="lg:mt-14" />
         </div>
       </div>
     </div>
