@@ -1,6 +1,6 @@
 const Contact = require(`${__models}/contact`);
 const { responseHandler } = require(`${__utils}/responseHandler`);
-const { sendEmail } = require(`${__utils}/sendEmail`);
+const sendEmail = require(`${__utils}/sendEmail`);
 
 const {
   connectToDatabase,
@@ -20,7 +20,7 @@ exports.contactUs = async (req, res) => {
     const contact = new Contact({ name, email, subject, message });
     await contact.save();
     const mailOptions = {
-      to: "muhammadhuzaifa7012@gmail.com", // your email
+      to: "talha.developments@gmail.com", // your email
       subject: `New Contact Us Message: ${subject}`,
       text: `You have a new message from ${name} (${email}):\n\n${message}`,
       html: `
