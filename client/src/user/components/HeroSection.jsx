@@ -8,7 +8,7 @@ const HeroSection = () => {
       className="w-full flex items-start justify-center lg:min-h-[78vh] bg-cover bg-center "
       style={{ backgroundImage: `url(${herobg})` }}
     >
-      <div className="md:w-[80%] w-[90%] flex lg:flex-row lg:mt-5 flex-col xl:gap-8 lg:gap-0 gap-4">
+      <div className="md:w-[80%] w-[90%] flex lg:flex-row lg:mt-5 flex-col xl:gap-8 lg:gap-0 gap-4 sm:mt-10">
         <div className="lg:w-1/2 flex flex-col items-start justify-center gap-4 mb-8">
           <h1 className="text-gradient text-[42px]  leading-tight font-bold">
             HIGHEST QUALITY PEPTIDES FOR SALE
