@@ -7,7 +7,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const sendEmail = async ({ to, subject, text, html, attachments }) => {
   const msg = {
     to,
-    from: process.env.SENDGRID_FROM_EMAIL, // Set a default verified sender email in .env
+    from: process.env.SENDGRID_FROM_EMAIL,
     subject,
     text,
     html,
@@ -23,10 +23,8 @@ const sendEmail = async ({ to, subject, text, html, attachments }) => {
     if (error.response) {
       console.error("Error response:", error.response.body);
     }
-    throw error; // Optionally, rethrow the error to handle it in the calling function
+    throw error;
   }
 };
 
-// Export the sendEmail function for use in other files
 module.exports = sendEmail;
-// module.exports = { sendEmail };
