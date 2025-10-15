@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { PulseLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { getProductList } from "../../service/service"; // Import your API service
 
@@ -99,7 +100,7 @@ const ProductItems = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center my-16">
-        <div className="text-lg">Loading products...</div>
+        <PulseLoader color="#093161" size={12} />
       </div>
     );
   }
@@ -107,7 +108,7 @@ const ProductItems = () => {
   if (error) {
     return (
       <div className="flex items-center justify-center my-16">
-        <div className="text-red-500 text-lg">{error}</div>
+        <div className="text-red-500 font-semibold text-center text-lg">{error}</div>
       </div>
     );
   }
@@ -115,8 +116,8 @@ const ProductItems = () => {
   return (
     <div className="flex items-center justify-center my-16">
       <div className="flex flex-col items-center w-[100%]">
-        <div className="md:text-[26px] lg:text-[32px] xl:text-[32px] text-[26px] font-[700] leading-[32px] text-gray-800">
-          Research Peptides For Sale
+        <div className="md:text-[26px] lg:text-[32px] xl:text-[32px] text-[26px] font-[700] leading-[32px] text-gray-800 ">
+          <h1>Research Peptides For Sale</h1>
         </div>
         <div className="flex md:flex-row flex-col items-start justify-between gap-4 md:w-[80%] w-[90%] p-2 my-8">
           <p className="font-[600] text-[14px] leading-[26px]">

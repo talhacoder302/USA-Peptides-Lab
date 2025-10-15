@@ -184,19 +184,20 @@ const Header = () => {
           <div className="absolute top-0 left-0 w-[100%]  z-40 flex justify-center items-center px-4 py-3">
             <div className="w-[82%] items-center rounded-lg bg-black border-2 border-primary  relative px-4">
               <button
-                className="absolute right-4 top-4  text-xl text-primary"
+                className="absolute right-4 top-4 text-xl text-primary"
                 onClick={() => {
                   setSearchOpen(false);
                   setSearchQuery("");
                 }}
               >
-                <IoMdClose size={30} />
+              <IoMdClose size={35} />
               </button>
               <input
                 type="text"
                 value={searchQuery}
+                placeholder="Search"
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-transparent py-6 rounded-md text-primary outline-none"
+                className="w-full bg-transparent py-6 rounded-md text-primary outline-none text-xl"
               />
 
               {/* Search Results */}
@@ -204,11 +205,11 @@ const Header = () => {
                 <div className="mt-4">
                   {filteredResults.length > 0 ? (
                     <>
-                      <ul className=" max-h-60 overflow-y-auto">
+                      <ul className="max-h-60 overflow-y-auto">
                         {filteredResults.slice(0, 5).map((product) => (
                           <li
                             key={product.id}
-                            className="border-b border-[#666]  p-6 hover:bg-[#666] transition cursor-pointer"
+                            className="border-b border-[#666] p-6 hover:bg-[#666] transition cursor-pointer"
                             onClick={() => {
                               navigate(product.url);
                               setSearchOpen(false);
@@ -230,7 +231,7 @@ const Header = () => {
                       </ul>
                       {filteredResults.length > 5 && (
                         <p
-                          className="text-primary text-sm mt-4 underline cursor-pointer"
+                          className="text-primary text-lg py-2 cursor-pointer font-semibold text-center"
                           onClick={() => {
                             navigate(`/search?query=${searchQuery}`);
                             setSearchOpen(false);
@@ -241,7 +242,7 @@ const Header = () => {
                       )}
                     </>
                   ) : (
-                    <p className="text-sm mt-4 text-gray-500">
+                    <p className="text-primary text-lg py-2 cursor-pointer font-semibold text-center">
                       No products found.
                     </p>
                   )}
