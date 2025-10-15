@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1f97780d.css",
-    "main.js": "/static/js/main.65b8d205.js",
+    "main.css": "/static/css/main.e576e7e5.css",
+    "main.js": "/static/js/main.89e3cb86.js",
     "static/media/hero-bg-vials.png": "/static/media/hero-bg-vials.3a711fa2b6080b3ddbf1.png",
     "static/media/updated-left.png": "/static/media/updated-left.353515b90f4cca6accaf.png",
     "static/media/right-updated.png": "/static/media/right-updated.f35c94b240d04b8963c8.png",
@@ -14,11 +14,11 @@
     "static/media/hero-bg.png": "/static/media/hero-bg.5ad99d312df09e04cb9e.png",
     "static/media/amex.webp": "/static/media/amex.f52cd7edb3ebb077d64c.webp",
     "index.html": "/index.html",
-    "main.1f97780d.css.map": "/static/css/main.1f97780d.css.map",
-    "main.65b8d205.js.map": "/static/js/main.65b8d205.js.map"
+    "main.e576e7e5.css.map": "/static/css/main.e576e7e5.css.map",
+    "main.89e3cb86.js.map": "/static/js/main.89e3cb86.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f97780d.css",
-    "static/js/main.65b8d205.js"
+    "static/css/main.e576e7e5.css",
+    "static/js/main.89e3cb86.js"
   ]
 }

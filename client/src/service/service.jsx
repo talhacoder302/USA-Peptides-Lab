@@ -1,12 +1,8 @@
 // services/apiService.js
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:5000/api/v1";
-const BASE_URL = "http://51.21.53.241:5000/api/v1";
-// const BASE_URL =
-//   "http://usapeptide-env.eba-gwmh4bqi.us-east-1.elasticbeanstalk.com/api/v1";
-
-
+// const BASE_URL = "http://51.21.53.241:5000/api/v1";
+const BASE_URL = "https://usapeptidelab.com/api/v1";
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -23,8 +19,6 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
-
 
 //Authentication//
 export const login = (email, password) => {
@@ -64,7 +58,6 @@ export const updateUserProfile = (updateData) => {
     withCredentials: true,
   });
 };
-
 
 export const getAllUsers = () => {
   return api.get(`${BASE_URL}/getAllUsers`, {
