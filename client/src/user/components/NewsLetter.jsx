@@ -14,7 +14,7 @@ const NewsLetter = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-[130vh] text-white md:px-4 px-2">
-        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-12 md:px-10 sm:px-6 px-4 flex flex-col gap-6 items-center justify-center rounded-lg">
+        <div className="w-[90%] md:w-[50%] bg-black bg-opacity-80 py-10 md:px-10 sm:px-6 px-4 flex flex-col gap-6 items-center justify-center rounded-lg">
           <div className="text-center space-y-2">
             <h2 className="xl:text-[26px] lg:text-[26px] md:text-[26px] text-[22px] font-[600]">
               SUBSCRIBE TO OUR NEWSLETTER
@@ -52,11 +52,14 @@ const NewsLetter = () => {
             >
               SUBSCRIBE
             </button>
-            <label className="flex items-center font-semibold text-[16px] gap-2 text-primary">
-              <input type="checkbox" className="w-3 h-3 accent-blue-400" />
-                Text me with offers and updates
-            </label>
-            <div className="text-primary font-semibold flex items-center justify-between gap-2">
+            <div className="checkbox-container">
+              <div className="checkbox-wrapper-19">
+                <input type="checkbox" id="cbtest-19"></input>
+                <label for="cbtest-19" className="check-box"></label>
+              </div>
+              <p className="font-semibold text-[16px] text-primary">Text me with offers and updates</p>
+            </div>
+            <div className="text-primary font-semibold flex items-center justify-between">
               <p className="text-xs">
                 We promise not to spam you. Read our privacy policy for more
                 information.
