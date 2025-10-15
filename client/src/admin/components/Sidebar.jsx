@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo.png";
 import {
   FaBoxOpen,
   FaUsers,
@@ -38,7 +37,7 @@ const Sidebar = ({ collapsed }) => {
       <div className="border-b flex justify-center py-1">
         <NavLink to="/admin/dashboard">
           <img
-            src={logo}
+            src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/logo.png'
             alt="Logo"
             className={`transition-all duration-300 ${
               collapsed ? "w-14" : "w-24"

@@ -1,11 +1,9 @@
-import React from "react";
-import Background from "../../assets/updated-left.png";
 const AboutUs = () => {
   return (
     <div className="flex flex-col items-end gap-14 mb-16">
       <div
         className="flex items-center justify-center w-full min-h-[50vh] bg-cover bg-center"
-        style={{ backgroundImage: `url(${Background})` }}
+        style={{ backgroundImage: `url(https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/updated-left.png)` }}
       >
         <h1 className="md:mt-12 mt-24 sm:w-[80%] w-[88%] text-gradient md:text-[60px] text-[32px] font-[700] md:leading-[70px]">
           ABOUT USA <br className="md:!flex hidden" /> PEPTIDES LAB

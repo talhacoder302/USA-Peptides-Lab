@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { FiSidebar } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { GoVerified } from "react-icons/go";
-import Profile from "../../assets/profile.png";
 import { LiaCreditCardSolid } from "react-icons/lia";
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -50,14 +49,14 @@ const Header = ({ collapsed, setCollapsed }) => {
             className="cursor-pointer  p-2"
             onClick={() => setShowDropdown((prev) => !prev)}
           >
-            <img className="w-10" src={Profile} alt="profile" />
+            <img className="w-10" src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/Profile.png' alt="profile" />
           </div>
 
           {showDropdown && (
             <div className="absolute right-0 mt-2 text-sm w-56 bg-white shadow-lg rounded-lg z-10">
               <ul className="text-gray-700">
                 <li className="flex gap-2 px-4 py-2 border-b hover:bg-gray-100 cursor-pointer">
-                  <img src={Profile} alt="profile" className="w-10" />
+                  <img src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/Profile.png' alt="profile" className="w-10" />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-semibold">
                       Toby Belhome

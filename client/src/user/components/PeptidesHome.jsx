@@ -1,5 +1,3 @@
-import React from "react";
-
 const PeptidesHome = () => {
   return (
     <div className="flex items-center justify-center sm:h-[100vh] my-10 lg-peptides-bg">

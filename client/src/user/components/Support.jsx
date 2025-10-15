@@ -1,14 +1,9 @@
-import React from "react";
-const plane = require("../../assets/plane.png");
-const support = require("../../assets/support.png");
-const badge = require("../../assets/badge.png");
-
 const Support = () => {
   return (
     <div className="bg-[#1E1E1E] py-24 flex items-center justify-center">
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 md:w-[80%] w-[90%] text-white">
         <div className="flex gap-4 items-start">
-          <img src={plane} alt="plane" />
+          <img src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/plane.png' alt="plane" />
           <div className="flex flex-col gap-3">
             <h1 className="text-[23px] font-[700] leading-[23px] text-gradient">
               FREE DELIVERY
@@ -20,7 +15,7 @@ const Support = () => {
           </div>
         </div>
         <div className="flex gap-4 items-start">
-          <img src={badge} alt="badge" />
+          <img src="https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/badge.png" alt="badge" />
           <div className="flex flex-col gap-3">
             <h1 className="text-[23px] font-[700] leading-[23px] text-gradient">
               HIGHEST QUALITY PEPTIDES
@@ -32,7 +27,7 @@ const Support = () => {
           </div>
         </div>
         <div className="flex gap-4 items-start">
-          <img src={support} alt="support" />
+          <img src="https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/support.png" alt="support" />
           <div className="flex flex-col gap-3">
             <h1 className="text-[23px] font-[700] leading-[23px] text-gradient">
               ONLINE SUPPORT

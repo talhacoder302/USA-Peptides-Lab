@@ -1,24 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.e576e7e5.css",
-    "main.js": "/static/js/main.89e3cb86.js",
-    "static/media/hero-bg-vials.png": "/static/media/hero-bg-vials.3a711fa2b6080b3ddbf1.png",
-    "static/media/updated-left.png": "/static/media/updated-left.353515b90f4cca6accaf.png",
-    "static/media/right-updated.png": "/static/media/right-updated.f35c94b240d04b8963c8.png",
-    "static/media/peptides-bg.png": "/static/media/peptides-bg.af5228cb08f7eb595a39.png",
-    "static/media/logo.png": "/static/media/logo.777023fc197cd74387f7.png",
-    "static/media/blend&peptidebg.png": "/static/media/blend&peptidebg.fb45328af3a2847f7315.png",
-    "static/media/profile.png": "/static/media/profile.322d3d46230aa22d3260.png",
-    "static/media/Ipamorelin.png": "/static/media/Ipamorelin.7054be40c4b67ffda8c0.png",
-    "static/media/usa-sketch.webp": "/static/media/usa-sketch.e7f641dcef20e798ca94.webp",
-    "static/media/hero-bg.png": "/static/media/hero-bg.5ad99d312df09e04cb9e.png",
-    "static/media/amex.webp": "/static/media/amex.f52cd7edb3ebb077d64c.webp",
+    "main.css": "/static/css/main.87d27afa.css",
+    "main.js": "/static/js/main.06e3db58.js",
     "index.html": "/index.html",
-    "main.e576e7e5.css.map": "/static/css/main.e576e7e5.css.map",
-    "main.89e3cb86.js.map": "/static/js/main.89e3cb86.js.map"
+    "main.87d27afa.css.map": "/static/css/main.87d27afa.css.map",
+    "main.06e3db58.js.map": "/static/js/main.06e3db58.js.map"
   },
   "entrypoints": [
-    "static/css/main.e576e7e5.css",
-    "static/js/main.89e3cb86.js"
+    "static/css/main.87d27afa.css",
+    "static/js/main.06e3db58.js"
   ]
 }

@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import Logo from "../../assets/logo.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { HiOutlineUser } from "react-icons/hi";
@@ -98,7 +97,7 @@ const Header = () => {
       <div className="bg-black text-white sticky top-0 z-[999999]">
         <div className="md:w-[80%] w-[90%] mx-auto flex items-center justify-between md:py-3 py-3">
           <NavLink to="/">
-            <img src={Logo} alt="Logo" className="md:w-32 w-24" />
+            <img src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/logo.png' alt="Logo" className="md:w-32 w-24" />
           </NavLink>
 
           <div className="flex items-center gap-10">

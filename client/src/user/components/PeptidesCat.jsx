@@ -1,18 +1,13 @@
-import React from "react";
-const catbg = require("../../assets/blend&peptidebg.png");
-const peptidesCat = require("../../assets/Ipamorelin.png");
-const blendCat = require("../../assets/dnaStrand.png");
-
 const PeptidesCat = () => {
   return (
     <div
       className="w-full flex items-center justify-center py-10 bg-cover bg-center "
-      style={{ backgroundImage: `url(${catbg})` }}
+      style={{ backgroundImage: `url(https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/blend&peptidebg.png)` }}
     >
       <div className="flex lg:flex-row flex-col items-center lg:gap-0 gap-16 lg:py-4 py-10 justify-between w-[60%] ">
         <div className="flex flex-col items-center gap-4">
           <img
-            src={peptidesCat}
+            src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/Ipamorelin.png'
             className="h-72 "
             alt="Peptides Category"
           />
@@ -22,7 +17,7 @@ const PeptidesCat = () => {
         </div>
         <div className=" flex flex-col items-center gap-10">
           <img
-            src={blendCat}
+            src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/dnaStrand.png'
             
             alt="Blend Category"
           />

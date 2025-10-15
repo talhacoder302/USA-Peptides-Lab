@@ -1,13 +1,12 @@
-import Logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
-import Payment from "../../assets/amex.webp";
+
 const Footer = () => {
   return (
     <div className="bg-black text-white">
       <div className="sm:w-[85%] w-[90%] mx-auto flex md:flex-row flex-col md:items-center gap-10 py-16">
         <div className="md:w-[60%] flex flex-col gap-8">
           <div>
-            <img src={Logo} alt="Logo" className="w-44" />
+            <img src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/logo.png' alt="Logo" className="w-44" />
           </div>
           <div className=" italic font-semibold">
             All products are sold for research, laboratory, or analytical
@@ -76,7 +75,7 @@ const Footer = () => {
               Now Accepting
             </div>
             <div className="mt-6">
-              <img src={Payment} alt="Payment" />
+              <img src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/amex.webp' alt="Payment" />
             </div>
           </div>
         </div>

@@ -1,12 +1,8 @@
-import React from "react";
-const herobg = require("../../assets/hero-bg.png");
-const heropd = require("../../assets/hero-bg-vials.png");
-
 const HeroSection = () => {
   return (
     <div
       className="w-full flex items-start justify-center lg:min-h-[78vh] bg-cover bg-center "
-      style={{ backgroundImage: `url(${herobg})` }}
+      style={{ backgroundImage: `url(https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/hero-bg.png)` }}
     >
       <div className="md:w-[80%] w-[90%] flex lg:flex-row lg:mt-5 flex-col xl:gap-8 lg:gap-0 gap-4 sm:mt-10">
         <div className="lg:w-1/2 flex flex-col items-start justify-center gap-4 mb-8">
@@ -25,7 +21,7 @@ const HeroSection = () => {
           </a>
         </div>
         <div className="lg:w-[50%] flex items-center justify-center">
-          <img src={heropd} alt="product" className="lg:mt-14" />
+          <img src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/hero-bg-vials.png' alt="product" className="lg:mt-14" />
         </div>
       </div>
     </div>

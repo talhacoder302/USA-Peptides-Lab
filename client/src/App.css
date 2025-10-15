@@ -13,7 +13,7 @@
 }
 @media (min-width: 1024px) {
   .lg-peptides-bg {
-    background-image: url("../src/assets/usa-sketch.webp");
+    background-image: url("https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/usa-sketch.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

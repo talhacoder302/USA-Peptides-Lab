@@ -1,13 +1,11 @@
-import React from "react";
 import ProductItemms from "../components/ProductItemms";
-const herobg = require("../../assets/peptides-bg.png");
-const heropd = require("../../assets/hero-bg-vials.png");
+
 const Peptides = () => {
   return (
     <div>
       <div
         className="w-full lg:h-[78vh] flex items-start justify-center bg-cover bg-center "
-        style={{ backgroundImage: `url(${herobg})` }}
+        style={{ backgroundImage: `url(https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/peptides-bg.png)` }}
       >
         <div className="md:w-[80%] w-[90%] md:mt-5 flex gap-8 lg:flex-row flex-col">
           <div className="lg:w-1/2 flex flex-col items-center justify-center gap-10 ">
@@ -16,7 +14,7 @@ const Peptides = () => {
             </h1>
           </div>
           <div className="lg:w-1/2 flex items-center justify-center">
-            <img src={heropd} alt="product" className="lg:mt-14"/>
+            <img src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/hero-bg-vials.png' alt="product" className="lg:mt-14"/>
           </div>
         </div>
       </div>

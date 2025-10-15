@@ -3,14 +3,13 @@ import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
-const catbg = require("../../assets/blend&peptidebg.png");
 
 const NewsLetter = () => {
   const [phone, setPhone] = useState("");
   return (
     <div className="relative w-full">
       <img
-        src={catbg}
+        src='https://usapeptidelab-s3.s3.eu-north-1.amazonaws.com/assets/blend&peptidebg.png'
         alt="Newsletter Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
