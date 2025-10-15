@@ -8,7 +8,7 @@ const BASE_URL = "http://localhost:5000/api/v1";
 
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api/v1",
+  baseURL: BASE_URL,
   withCredentials: true,
 });
 
