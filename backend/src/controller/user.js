@@ -13,6 +13,7 @@ const {
 } = require(`${__utils}/helper.js`);
 const { sendSignUpLinkEmail } = require(`${__utils}/sendEmailTemp.js`);
 const crypto = require("crypto");
+const { decode } = require("punycode");
 const SignupToken = require(`${__models}/signupTokenModel`);
 
 exports.helloWorld = async (req, res) => {
@@ -221,22 +222,22 @@ exports.accountDetails = async (req, res) => {
 };
 
 exports.refreshToken = async (req, res) => {
-  const refreshToken = req.cookies["refreshToken"];
+  const refreshToken = req.cookies['refreshToken'];
   if (!refreshToken) {
     return responseHandler.unauthorized(res, {}, "Refresh token is missing");
   }
 
   try {
-    const decoded = await verifyToken(refreshToken);
+    const decoded = await verifyToken(refreshToken)
     const user = await User.findById(decoded.id);
+
     if (!user || user.refreshToken !== refreshToken) {
       return responseHandler.unauthorized(res, {}, "Invalid refresh token");
     }
 
     // Generate new access token
-    const { accessToken, refreshToken: newRefreshToken } = await generateTokens(
-      user
-    );
+    const payload = await tokenPayload(user);
+    const { accessToken, refreshToken: newRefreshToken } = await generateTokens(payload, res, user);
 
     // Update and save new refresh token
     user.refreshToken = newRefreshToken;
@@ -244,11 +245,9 @@ exports.refreshToken = async (req, res) => {
 
     responseHandler.success(res, {}, "Set new refresh token successfully");
   } catch (error) {
-    return res
-      .status(403)
-      .json({ message: "Invalid or expired refresh token" });
+    return res.status(403).json({ message: error.message || 'Invalid or expired refresh token' });
   }
-};
+}
 
 exports.login = async (req, res) => {
   try {
