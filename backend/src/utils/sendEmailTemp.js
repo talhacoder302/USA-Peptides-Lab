@@ -1,4 +1,5 @@
 const sendEmail = require("./sendEmail");
+
 const sendSignUpLinkEmail = async (email, signupLink) => {
   const subject = "Complete Your Signup";
   const html = `
@@ -18,6 +19,51 @@ const sendSignUpLinkEmail = async (email, signupLink) => {
   await sendEmail({ to: email, subject, html });
 };
 
+const sendContactMessageEmail = async ({ name, email, subject, message }) => {
+  const sentTo = process.env.CONTACT_EMAIL || "talha.developments@gmail.com";
+  const sentSubject = `New Contact Us Message: ${subject}`;
+  // const htmls = `
+  //       <h3>New Contact Message</h3>
+  //       <p><strong>Name:</strong> ${name}</p>
+  //       <p><strong>Email:</strong> ${email}</p>
+  //       <p><strong>Subject:</strong> ${subject}</p>
+  //       <p><strong>Message:</strong><br/> ${message}</p>
+  //     `;
+  const html = `
+    <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 30px;">
+      <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <h2 style="color: #333333;">New Contact Message</h2>
+        <p style="font-size: 16px; color: #555555;">You’ve received a new message via the contact form:</p>
+
+        <table style="width: 100%; font-size: 15px; color: #555;">
+          <tr>
+            <td style="padding: 8px 0;"><strong>Name:</strong></td>
+            <td>${name}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0;"><strong>Email:</strong></td>
+            <td>${email}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0;"><strong>Subject:</strong></td>
+            <td>${subject}</td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 20px;">
+          <p style="font-size: 16px; color: #555555;"><strong>Message:</strong></p>
+          <div style="font-size: 15px; color: #555;">
+            ${message}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  await sendEmail({ to: sentTo, subject: sentSubject, html });
+};
+
 module.exports = {
   sendSignUpLinkEmail,
+  sendContactMessageEmail,
 };

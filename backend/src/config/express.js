@@ -82,7 +82,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/v1", router);
-app.get("*", (req, res) => {
-  res.sendFile(path.join(buildPath, "/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(buildPath, "/index.html"));
+// });
 module.exports = app;
