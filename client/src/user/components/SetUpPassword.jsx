@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import "react-toastify/dist/ReactToastify.css";
 import { completeSignup } from "../../service/service";
 import { successToast, errorToast } from "../../utils/AlertsConfig";
 
@@ -88,7 +87,6 @@ const SetUpPassword = () => {
           </button>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 };

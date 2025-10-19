@@ -9,7 +9,7 @@ import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import data from "../../data.json";
 import Cart from "./Cart"; // Import the Cart component
-
+import { getMe } from "../../service/service";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -148,14 +148,18 @@ const Header = () => {
             {/* Icons */}
             <div className="text-2xl flex items-center sm:gap-6 gap-3">
               <NavLink to="/my-accounts">
-                <HiOutlineUser onClick={() => {
-    const token = Cookies.get("refreshToken"); // read token from cookies
-    if (token) {
-      navigate("/my-accounts/dashboard");
-    } else {
+                <HiOutlineUser
+  className="lg:!flex hidden cursor-pointer"
+  onClick={async () => {
+    try {
+      const { data } = await getMe();
+      navigate(data?.success ? "/my-accounts/dashboard" : "/my-accounts");
+    } catch {
       navigate("/my-accounts");
     }
-  }} className="lg:!flex hidden" />
+  }}
+/>
+
               </NavLink>
               <div className="relative cursor-pointer" onClick={handleOpenCart}>
                 <FaShoppingCart />

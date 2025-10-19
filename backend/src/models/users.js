@@ -43,6 +43,10 @@ const userSchema = new Schema(
       required: true,
       default: false,
     },
+    isLoggedIn: {
+      type: Boolean,
+      default: false,
+    },
     refreshToken: { type: String },
     isDeleted: {
       type: Boolean,

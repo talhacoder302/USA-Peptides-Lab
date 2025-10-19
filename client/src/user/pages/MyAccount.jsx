@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { login, sendSignupLink } from "../../service/service";
 import { successToast, errorToast } from "../../utils/AlertsConfig";
@@ -27,29 +25,34 @@ const MyAccount = () => {
   }, []);
 
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await login(loginEmail, loginPassword);
+const handleLogin = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await login(loginEmail, loginPassword);
 
-      successToast(res.data?.message || "Login successful!");
+    successToast(res.data?.message || "Login successful!");
 
-      if (rememberMe) {
-        localStorage.setItem("rememberEmail", loginEmail);
-        localStorage.setItem("rememberPassword", loginPassword);
-      } else {
-        localStorage.removeItem("rememberEmail");
-        localStorage.removeItem("rememberPassword");
-      }
+    if (rememberMe) {
+      localStorage.setItem("rememberEmail", loginEmail);
+      localStorage.setItem("rememberPassword", loginPassword);
+    } else {
+      localStorage.removeItem("rememberEmail");
+      localStorage.removeItem("rememberPassword");
+    }
+
+    // ✅ Add small delay so Toast has time to render before navigation
+    setTimeout(() => {
       if (res.data.data.role === "Admin") {
         navigate("/admin/dashboard");
       } else {
         navigate("/");
       }
-    } catch (err) {
-      errorToast(err.response?.data?.message || "Login failed");
-    }
-  };
+    }, 300); // 300ms is enough
+  } catch (err) {
+    errorToast(err.response?.data?.message || "Login failed");
+  }
+};
+
 
   // REGISTER
   const handleRegister = async (e) => {
@@ -68,7 +71,6 @@ const MyAccount = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-[#fefefe]">
       {/* Toastify container */}
-      <ToastContainer />
 
       <div className="flex flex-col w-[80%] gap-4 my-14">
         <h1 className="text-gradient text-3xl font-bold">My account</h1>

@@ -1,6 +1,7 @@
 // routes/AdminRoute.jsx
 import React from "react";
 import { Route } from "react-router-dom";
+
 import Layout from "../admin/Layout";
 import DashboardComponent from "../admin/components/Dashboard/DashboardComponent";
 import AddProduct from "../admin/components/Product/AddProduct";

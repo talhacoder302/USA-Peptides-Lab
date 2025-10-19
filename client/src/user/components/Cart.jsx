@@ -61,11 +61,12 @@ const Cart = ({
 
       {/* Cart Drawer */}
       <div
-        ref={cartRef}
-        className={`fixed top-0 right-0 h-full w-0.5/3 bg-white text-black shadow-lg z-[999999] transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+          ref={cartRef}
+  className={`fixed top-0 right-0 h-full w-[23%] bg-white text-black shadow-xl z-[999999] 
+  transform transition-all duration-500 ease-in-out
+  ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
+  `}
+>
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b">
           <button
@@ -106,7 +107,7 @@ const Cart = ({
           ) : (
             <>
               {/* Cart Items */}
-              <div className="h-[37%] overflow-scroll  p-4">
+              <div className="h-[37%] overflow-auto custom-scroll  p-4">
                 {cartItems.map((item) => (
                   <div
                     key={item.id}

@@ -36,7 +36,7 @@ exports.subscribeNewsletter = async (req, res) => {
       subject: "Welcome to Core Peptides Newsletter 🎉",
       html: `
         <div style="font-family: Arial, sans-serif; color: #333;">
-          <a href="http://localhost:3000/user" target="_blank">
+          <a href="http://localhost:3000" target="_blank">
             <img src="http://localhost:5000/newsletter-discount.jpg" alt="Discount Banner" style="width:100%; max-width:600px; border-radius:8px;" />
           </a>
           <h2>Hey ${name},</h2>
@@ -44,7 +44,7 @@ exports.subscribeNewsletter = async (req, res) => {
           <p>Enjoy <strong>10% off</strong> your first order using this code at checkout:</p>
           <h3 style="background:#f3f3f3; padding:10px; display:inline-block; border-radius:5px;">PEP10</h3>
           <br/><br/>
-          <a href="http://localhost:3000/user" 
+          <a href="http://localhost:3000" 
              style="background:#e6007e; color:#fff; padding:12px 20px; text-decoration:none; border-radius:6px; font-weight:bold;">
              Start Shopping
           </a>
@@ -52,13 +52,13 @@ exports.subscribeNewsletter = async (req, res) => {
           
           <hr/>
           <h3>Learn More in our Blog Articles</h3>
-          <a href="http://localhost:3000/user/blog" style="color:#e6007e; font-weight:bold; text-decoration:none;">Visit Blog →</a>
+          <a href="http://localhost:3000/blog" style="color:#e6007e; font-weight:bold; text-decoration:none;">Visit Blog →</a>
           
           <br/><br/>
           <footer style="margin-top:30px; text-align:center; font-size:12px; color:#888;">
             <img src="http://localhost:5000/footer-logo.png" alt="Logo" width="60" />
             <p>5401 S Kirkman Rd, Suite 310, Orlando, United States, 32819</p>
-            <a href="http://localhost:3000/user" style="color:#e6007e;">Unsubscribe</a>
+            <a href="http://localhost:3000" style="color:#e6007e;">Unsubscribe</a>
           </footer>
         </div>
       `,

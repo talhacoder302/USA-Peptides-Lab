@@ -187,3 +187,12 @@
   -webkit-animation: dothatopcheck-19 0.4s ease 0s forwards;
   animation: dothatopcheck-19 0.4s ease 0s forwards;
 }
+/* Hide scrollbars but keep scroll functionality */
+.custom-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

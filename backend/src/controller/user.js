@@ -266,6 +266,8 @@ exports.login = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch)
       return responseHandler.validationError(res, "Your password is incorrect");
+        user.isLoggedIn = true;
+    await user.save();
     const payload = await tokenPayload(user);
     const { accessToken, refreshToken } = await generateTokens(
       payload,
@@ -410,10 +412,10 @@ exports.logout = async (req, res) => {
       return responseHandler.validationError(res, "No user is logged in.");
     }
 
-    // Remove refresh token from DB
     const user = await User.findById(req.user._id);
     if (user) {
       user.refreshToken = null;
+      user.isLoggedIn = false; // ✅ Set to false on logout
       await user.save();
     }
 
@@ -428,5 +430,22 @@ exports.logout = async (req, res) => {
       res,
       "An error occurred during logout. Please try again."
     );
+  }
+};
+
+exports.getMe = async (req, res) => {
+  try {
+    await connectToDatabase();
+
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return responseHandler.error(res, "User not found", 404);
+    }
+
+    return responseHandler.success(res, user, "User data fetched successfully");
+  } catch (error) {
+    console.error(error);
+    return responseHandler.error(res, error);
   }
 };

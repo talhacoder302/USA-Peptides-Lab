@@ -25,7 +25,7 @@ const Header = ({ collapsed, setCollapsed }) => {
     try {
       const res = await logout();
       console.log(res);
-      navigate("/user/accountinfo");
+      navigate("/my-accounts");
     } catch (error) {
       console.error("Logout failed:", error);
     }
