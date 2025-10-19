@@ -7,7 +7,10 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const sendEmail = async ({ to, subject, text, html, attachments }) => {
   const msg = {
     to,
-    from: process.env.SENDGRID_FROM_EMAIL,
+    from: {
+      email: process.env.SENDGRID_FROM_EMAIL,
+      name: 'USA Peptides Lab'
+    },
     subject,
     text,
     html,
