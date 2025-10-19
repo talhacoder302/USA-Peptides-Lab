@@ -36,6 +36,8 @@ module.exports = (router, controller) => {
   passport.authenticate("jwt", { session: false }),
   controller.updateUserAddress
 );
+  router.get('/refreshToken', controller.refreshToken)
+
 
   // router.put('/updateUser/:id', isAdmin, controller.updateUser);
   // router.delete('/deleteUser/:id', isAdmin, controller.deleteUser);
