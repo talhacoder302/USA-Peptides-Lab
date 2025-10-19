@@ -46,3 +46,56 @@ const uploadFields = upload.fields([
 ]);
 
 module.exports = { upload, uploadFields };
+
+/* 
+// -- AWS S3 Upload --
+const multer = require("multer");
+const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+
+const s3 = new S3Client({
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
+});
+
+const storage = multer.memoryStorage();
+
+const fileFilter = (req, file, cb) => {
+  const allowedImageTypes = ["image/jpeg", "image/png", "image/webp"];
+  const allowedDocTypes = ["application/pdf"];
+  const allAllowedTypes = [...allowedImageTypes, ...allowedDocTypes];
+
+  if (allAllowedTypes.includes(file.mimetype)) cb(null, true);
+  else cb(new Error("Invalid file type. Only jpg, png, webp, and pdf are allowed."), false);
+};
+
+async function uploadToS3(fileBuffer, fileName, mimetype, folder = "uploads") {
+  const s3Key = `${folder}/${uuidv4()}${path.extname(fileName)}`;
+
+  const uploadParams = {
+    Bucket: process.env.AWS_S3_BUCKET,
+    Key: s3Key,
+    Body: fileBuffer,
+    ContentType: mimetype,
+  };
+
+  await s3.send(new PutObjectCommand(uploadParams));
+
+  return `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${s3Key}`;
+}
+
+const upload = multer({ storage, fileFilter });
+
+const uploadFields = upload.fields([
+  { name: "file", maxCount: 1 },
+  { name: "certificate", maxCount: 1 },
+  { name: "hplc", maxCount: 1 },
+  { name: "massSpectrometry", maxCount: 1 },
+]);
+
+module.exports = { upload, uploadFields, uploadToS3 };
+*/
