@@ -12,7 +12,6 @@ import UserRoutes from "./routes/UserRoute";
 import AdminRoutes from "./routes/AdminRoute";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import ProtectedRoute from "./utils/ProtectedRoutes";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,16 +43,8 @@ function App() {
       <ScrollToTop />
       <LayoutWrapper>
         <Routes>
-          <Route path="/admin/*" element={
-              <ProtectedRoute>
-                <AdminWrapper />
-              </ProtectedRoute>
-            } />
-          <Route path="/*" element={
-              <ProtectedRoute>
-                <UserWrapper />
-              </ProtectedRoute>
-            } />
+          <Route path="/admin/*" element={<AdminWrapper />} />
+          <Route path="/*" element={<UserWrapper />} />
         </Routes>
       </LayoutWrapper>
       <ToastContainer

@@ -23,10 +23,10 @@ const UserDashboard = () => {
     const handleLogout = async () => {
     try {
       await logout();
-      successToast("Logged out successfully ✅");
+      successToast("Logged out successfully");
       navigate("/my-accounts"); // redirect after logout
     } catch (err) {
-      errorToast("Logout failed ❌");
+      errorToast("Logout failed");
       console.error("Logout error:", err);
     }
   };
