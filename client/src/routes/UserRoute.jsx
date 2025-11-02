@@ -21,12 +21,13 @@ import Billing from "../user/components/UserDashboardComp/Address/Billing";
 import Shipping from "../user/components/UserDashboardComp/Address/Shipping";
 import Download from "../user/components/UserDashboardComp/Download";
 import Order from "../user/components/UserDashboardComp/Order";
+import Checkout from "../user/components/Cart/Checkout";
 
 const userRoutes = [
   <Route key="home" path="/" element={<Home />} />,
   <Route key="about-us" path="about-us" element={<AboutUs />} />,
   <Route key="contact" path="contact" element={<Contact />} />,
-  // Define peptides routes separately
+  <Route key="checkout" path="checkout" element={<Checkout />} />,
   <Route key="peptides-main" path="peptides" element={<Peptides />} />,
   <Route
     key="peptides-detail"
