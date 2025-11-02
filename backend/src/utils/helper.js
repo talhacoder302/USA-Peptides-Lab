@@ -17,14 +17,14 @@ const generateTokens = async (payload, res, user) => {
 
     // Set cookies for access and refresh tokens
     res.cookie('jwt', accessToken, {
-        httpOnly: true, // ✅ JS se access nahi
-        secure: isProd, // ✅ Prod me HTTPS required
-        sameSite: isProd ? 'none' : 'lax', // ✅ Cross-site cookie ke liye none
+        httpOnly: false,
+        secure: isProd,
+        sameSite: isProd ? 'none' : 'lax',
         maxAge: 2 * 60 * 60 * 1000 // 2 hours
     });
 
     res.cookie('refreshToken', refreshToken, {
-        httpOnly: true,
+        httpOnly: false,
         secure: isProd,
         sameSite: isProd ? 'none' : 'lax',
         maxAge: 24 * 60 * 60 * 1000 // 1 day
